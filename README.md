@@ -6,21 +6,15 @@ test case for encode/decode http2 frame.
 
 http://tools.ietf.org/html/draft-ietf-httpbis-http2
 
-## Directory(TODO: fixme)
+## Directory
 
-The ```raw-data``` directory has original stories of header data in
-json.
-
-Other than ```raw-data``` directory, the HPACK implementations have
-their own directories to store the result of its encoder.
-
-You can perform interoperability testing for your implementation with
-them.
+Each directory has testcase of its names frame.
+For example, data directory has a test cases of DATA frame.
 
 ## File Name
 
-Each json in story-#{n}.json is story case and shares context.
-Each story is either series of requests or responses.
+Each json named #{n}.json. n is 0 origin.
+If you add new testcase, increment number of file.
 
 ## JSON Format
 
