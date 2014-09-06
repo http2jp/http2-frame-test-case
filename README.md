@@ -38,14 +38,16 @@ Each json has:
 
 - draft: http2 draft version number of implementation.
 - description: general description of implementation.
-- cases: test cases.
-  - seqno:  a sequence number. 0 origin.
-  - wire:   encoded wire data in hex string.
+- wire:   encoded wire data in hex string.
+- frame:
   - length: length property of frame header.
   - type:   type property of frame header.
   - flags:  flags property of frame header.
   - stream_identifier: stream identifier property of frame header.
   - frame_payload: see frame payload section
+- error:
+  - code
+  - reason
 
 
 ### frame payload
@@ -72,7 +74,10 @@ each property names are lower snake case of original name
       "padding": "00000000000"
     }
   },
-  "error_code": 0
+  "error": {
+    "code": [0, 1, 2],
+    "description": "stream id 1 on settings frame"
+  }
 }
 ```
 
