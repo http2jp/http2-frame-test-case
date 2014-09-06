@@ -58,26 +58,29 @@ each property names are lower snake case of original name
 {
   "draft": 14,
   "description": "expain your implementation",
-  "cases": [
-    {
-      "seqno": 0,
-      "wire": "1234567890abcdef",
-      "length": 10,
-      "type": 1,
-      "flags": 1,
-      "stream_identifier": 1,
-      "frame_payload": {
-        "palength": 10,
-        "stream_dependency": 10,
-        "weight": 10,
-        "header_block_fragment": "1234567890abcdef",
-        "padding": "00000000000"
-      }
-    },
-    .....
-  ]
+  "wire": "1234567890abcdef",
+  "frame": {
+    "length": 10,
+    "type": 1,
+    "flags": 1,
+    "stream_identifier": 1,
+    "frame_payload": {
+      "palength": 10,
+      "stream_dependency": 10,
+      "weight": 10,
+      "header_block_fragment": "1234567890abcdef",
+      "padding": "00000000000"
+    }
+  },
+  "error_code": 0
 }
 ```
+
+## Contribution
+
+pull request with #{non-number}.json
+merge with rename as #{latest}.json
+
 
 ## License
 
