@@ -6,8 +6,59 @@ test case for encode/decode http2 frame.
 
 http://tools.ietf.org/html/draft-ietf-httpbis-http2
 
+## Directory(TODO: fixme)
+
+The ```raw-data``` directory has original stories of header data in
+json.
+
+Other than ```raw-data``` directory, the HPACK implementations have
+their own directories to store the result of its encoder.
+
+You can perform interoperability testing for your implementation with
+them.
+
+## File Name
+
+Each json in story-#{n}.json is story case and shares context.
+Each story is either series of requests or responses.
+
 ## JSON Format
 
+To test the decoder implementation, for each story file, for each case
+in ```cases``` in the order they appear, decode compressed header
+block in ```wire``` and verify the result against the header set in
+```headers```. Please note that elements in ```cases``` share the same
+compression context.
+
+To test the encoder implementation, generate json story files by
+encoding header sets in ```headers```. Using json files in
+```raw-data``` is handy. Then use your decoder to verify that it can
+successfully decode the compressed header block. If you can play with
+other HTTP2 decoder implementations, try decoding your encoded data
+with them. If there is any mismatch, then there must be a bug in
+somewhere either encoder or decoder, or both.
+
+### Frame Header format
+
+Each json has:
+
+- draft: http2 draft version number of implementation.
+- description: general description of implementation.
+- cases: test cases.
+  - seqno:  a sequence number. 0 origin.
+  - wire:   encoded wire data in hex string.
+  - length: length property of frame header.
+  - type:   type property of frame header.
+  - flags:  flags property of frame header.
+  - stream_identifier: stream identifier property of frame header.
+  - frame_payload: see frame payload section
+
+
+### frame payload
+
+each property names are lower snake case of original name
+
+### example: headers frame
 
 ```js
 {
@@ -33,3 +84,7 @@ http://tools.ietf.org/html/draft-ietf-httpbis-http2
   ]
 }
 ```
+
+## License
+
+see LICENSE file
