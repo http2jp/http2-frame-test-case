@@ -33,7 +33,7 @@ Each json has:
 
 Each property name is lower snake case (connected by underscore) of original name
 
-### example: a data frame
+### Example: a data frame
 
 ```js
 {
@@ -55,6 +55,14 @@ Each property name is lower snake case (connected by underscore) of original nam
 ```
 
 ## Test algorithm
+
+### Normal cases
+
+"frame" is not null and "error" is null.
+
+### Error cases
+
+"frame" is null and "error" is not null.
 
 ## Contribution
 
