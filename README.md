@@ -1,6 +1,6 @@
 # http2-frame-test-case
 
-test case for encode/decode http2 frame.
+Test cases for encode/decode http2 frame.
 
 ## Draft
 
@@ -8,13 +8,13 @@ http://tools.ietf.org/html/draft-ietf-httpbis-http2
 
 ## Directory
 
-Each directory has testcase of its names frame.
-For example, data directory has a test cases of DATA frame.
+Each directory has test cases of its corresponding frame.
+For example, "data" directory has test cases of DATA frame.
 
 ## File Name
 
-Each json named #{n}.json. n is 0 origin.
-If you add new testcase, increment number of file.
+Each json is named #{n}.json. n is 0 origin.
+If you add a new test case, increment the number of the file.
 
 ## JSON Format
 
@@ -36,7 +36,6 @@ somewhere either encoder or decoder, or both.
 
 Each json has:
 
-- draft: http2 draft version number of implementation.
 - description: general description of implementation.
 - wire:   encoded wire data in hex string.
 - frame:
@@ -45,46 +44,38 @@ Each json has:
   - flags:  flags property of frame header.
   - stream_identifier: stream identifier property of frame header.
   - frame_payload: see frame payload section
-- error:
-  - code
-  - reason
+- error:  a list of possible error codes
 
 
 ### frame payload
 
-each property names are lower snake case of original name
+Each property name is lower snake case (connected by underscore) of original name
 
-### example: headers frame
+### example: a data frame
 
 ```js
 {
-  "draft": 14,
-  "description": "expain your implementation",
-  "wire": "1234567890abcdef",
-  "frame": {
-    "length": 10,
-    "type": 1,
-    "flags": 1,
-    "stream_identifier": 1,
-    "frame_payload": {
-      "palength": 10,
-      "stream_dependency": 10,
-      "weight": 10,
-      "header_block_fragment": "1234567890abcdef",
-      "padding": "00000000000"
-    }
-  },
-  "error": {
-    "code": [0, 1, 2],
-    "description": "stream id 1 on settings frame"
-  }
+    "error": null,
+    "wire": "0000140008000000020648656C6C6F2C20776F726C6421486F77647921",
+    "frame": {
+        "length": 20,
+        "frame_payload": {
+            "data": "Hello, world!",
+            "padding_length": 6,
+            "padding": "Howdy!"
+        },
+        "flags": 8,
+        "stream_identifier": 2,
+        "type": 0
+    },
+    "description": "normal data frame"
 }
 ```
 
 ## Contribution
 
-pull request with #{non-number}.json
-merge with rename as #{latest}.json
+- Please send a pull request with #{non-number}.json
+- We will merge it by renaming it to #{latest}.json
 
 
 ## License
