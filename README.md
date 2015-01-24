@@ -18,22 +18,6 @@ If you add a new test case, increment the number of the file.
 
 ## JSON Format
 
-To test the decoder implementation, for each story file, for each case
-in ```cases``` in the order they appear, decode compressed header
-block in ```wire``` and verify the result against the header set in
-```headers```. Please note that elements in ```cases``` share the same
-compression context.
-
-To test the encoder implementation, generate json story files by
-encoding header sets in ```headers```. Using json files in
-```raw-data``` is handy. Then use your decoder to verify that it can
-successfully decode the compressed header block. If you can play with
-other HTTP2 decoder implementations, try decoding your encoded data
-with them. If there is any mismatch, then there must be a bug in
-somewhere either encoder or decoder, or both.
-
-### Frame Header format
-
 Each json has:
 
 - description: general description of implementation.
@@ -46,8 +30,6 @@ Each json has:
   - frame_payload: see frame payload section
 - error:  a list of possible error codes
 
-
-### frame payload
 
 Each property name is lower snake case (connected by underscore) of original name
 
@@ -71,6 +53,8 @@ Each property name is lower snake case (connected by underscore) of original nam
     "description": "normal data frame"
 }
 ```
+
+## Test algorithm
 
 ## Contribution
 
