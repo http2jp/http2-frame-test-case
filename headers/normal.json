@@ -1,0 +1,17 @@
+{
+    "error": null,
+    "wire": "00000101000000000182",
+    "frame": {
+        "length": 1,
+        "frame_payload": {
+            "priority": null,
+            "header_block_fragment": "",
+            "padding_length": null,
+            "padding": null
+        },
+        "flags": 0,
+        "stream_identifier": 1,
+        "type": 1
+    },
+    "description": "normal headers frame"
+}
