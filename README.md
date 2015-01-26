@@ -47,11 +47,11 @@ Each property name is lower snake case (connected by underscore) of original nam
 
 ## Test algorithm
 
-First, dcode a JOSN file to data structures in your programming language.
-For simplicity, we refer such data structures just by JSON names, such as
+First, decode a JSON file to data structures in your programming language.
+For simplicity, we refer to such data structures just by JSON names, such as
 "frame".
 
-To decode "wire", you MUST use default setting values of HTTP2 and an empty dynamic table of HAPCK.
+To decode "wire", you MUST use default setting values of HTTP2 and an empty dynamic table of HPACK.
 
 ### Normal cases
 
@@ -63,14 +63,14 @@ To decode "wire", you MUST use default setting values of HTTP2 and an empty dyna
 For the HEADERS frame,
 "header_block_fragment" is carefully created just by using the static table.
 If you decode "header_block_fragment" in step 1 and encode again in step 2,
-you would otain a different "wire"
+you would obtain a different "wire"
 since encoding algorithms of HPACK is not unique,
 
 ### Error cases
 
 "frame" is null and "error" is not null.
 
-1. Decode "wire" to obtain an error code. Then check if the error code is a memmber of "error".
+1. Decode "wire" to obtain an error code. Then check if the error code is a member of "error".
 
 ## Contribution
 
@@ -80,4 +80,4 @@ since encoding algorithms of HPACK is not unique,
 
 ## License
 
-see LICENSE file
+See [LICENSE](LICENSE) file
