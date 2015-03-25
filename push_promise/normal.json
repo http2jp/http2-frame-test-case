@@ -1,15 +1,15 @@
 {
     "error": null,
-    "wire": "000018050800000009060000000B746869732069732064756D6D79486F77647921",
+    "wire": "000018050C00000009060000000A746869732069732064756D6D79486F77647921",
     "frame": {
         "length": 24,
         "frame_payload": {
             "header_block_fragment": "this is dummy",
             "padding_length": 6,
-            "promised_stream_id": 11,
+            "promised_stream_id": 10,
             "padding": "Howdy!"
         },
-        "flags": 8,
+        "flags": 12,
         "stream_identifier": 9,
         "type": 5
     },

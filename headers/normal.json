@@ -1,15 +1,15 @@
 {
     "error": null,
-    "wire": "00000101000000000182",
+    "wire": "00000D010400000001746869732069732064756D6D79",
     "frame": {
-        "length": 1,
+        "length": 13,
         "frame_payload": {
             "priority": null,
-            "header_block_fragment": "",
+            "header_block_fragment": "this is dummy",
             "padding_length": null,
             "padding": null
         },
-        "flags": 0,
+        "flags": 4,
         "stream_identifier": 1,
         "type": 1
     },
