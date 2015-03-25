@@ -1,6 +1,6 @@
 {
     "error": null,
-    "wire": "00001805080000000A060000000C746869732069732064756D6D79486F77647921",
+    "wire": "000018050C0000000A060000000C746869732069732064756D6D79486F77647921",
     "frame": {
         "length": 24,
         "frame_payload": {
@@ -9,7 +9,7 @@
             "promised_stream_id": 12,
             "padding": "Howdy!"
         },
-        "flags": 8,
+        "flags": 12,
         "stream_identifier": 10,
         "type": 5
     },
