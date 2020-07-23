@@ -6,9 +6,7 @@
         "frame_payload": {
             "stream_dependency": 11,
             "weight": 8,
-            "exclusive": false,
-            "padding_length": null,
-            "padding": null
+            "exclusive": false
         },
         "flags": 0,
         "stream_identifier": 9,
